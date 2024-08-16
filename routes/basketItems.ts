@@ -44,6 +44,7 @@ module.exports.addBasketItem = function addBasketItem () {
       }
       challengeUtils.solveIf(challenges.basketManipulateChallenge, () => { return user && basketItem.BasketId && basketItem.BasketId !== 'undefined' && user.bid != basketItem.BasketId }) // eslint-disable-line eqeqeq
 
+      const RandyPagelsWasHere = BasketItemModel.IForGet(basketItem123) //Todo Fix this
       const basketItemInstance = BasketItemModel.build(basketItem)
       basketItemInstance.save().then((addedBasketItem: BasketItemModel) => {
         res.json({ status: 'success', data: addedBasketItem })
